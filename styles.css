@@ -1,0 +1,422 @@
+:root {
+  --fondo: #121411;
+  --tinta: #e6e7dc;
+  --suave: #b4b7ab;
+  --linea: #2c2f28;
+  --aviso: #c2b394;
+  --enlace: #d2c4a4;
+  --ejemplo: #c6b48a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.65;
+  font-variant-ligatures: none;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #3a3d32;
+  color: #f4f5ee;
+}
+
+.saltar {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 2;
+  padding: 0.45rem 0.7rem;
+  background: #1c1e19;
+  color: var(--tinta);
+  text-decoration: underline;
+}
+
+.saltar:focus {
+  top: 0.75rem;
+  outline: 2px solid var(--aviso);
+  outline-offset: 3px;
+}
+
+.pagina {
+  width: min(40rem, calc(100% - 2.25rem));
+  margin: 0 auto;
+  padding: 2.75rem 0 3.5rem 1.15rem;
+  border-left: 1px solid var(--linea);
+}
+
+.ruta {
+  margin: 0 0 0.85rem;
+  color: var(--suave);
+  font-size: 0.875rem;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1.85rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.rol {
+  margin-top: 0.4rem;
+  color: var(--suave);
+}
+
+.desde {
+  margin-top: 1rem;
+  max-width: 38rem;
+}
+
+.tiempo {
+  white-space: nowrap;
+}
+
+nav {
+  margin-top: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.4rem 0;
+  color: var(--suave);
+  text-decoration: underline;
+  text-decoration-color: #6d6858;
+  text-underline-offset: 0.22em;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--tinta);
+  text-decoration-color: var(--aviso);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--aviso);
+  outline-offset: 3px;
+}
+
+main {
+  display: block;
+}
+
+main:focus {
+  outline: 2px solid var(--aviso);
+  outline-offset: 6px;
+}
+
+section {
+  margin-top: 2.5rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--linea);
+  scroll-margin-top: 1.25rem;
+}
+
+h2 {
+  margin-bottom: 0.85rem;
+  color: var(--aviso);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+section p + p,
+section p + ul,
+section ul + p {
+  margin-top: 0.85rem;
+}
+
+ul {
+  margin: 0.85rem 0 0;
+  padding-left: 1.15rem;
+}
+
+li {
+  margin: 0.5rem 0;
+  padding-left: 0.25rem;
+}
+
+li::marker {
+  color: var(--aviso);
+}
+
+.estudios {
+  list-style: none;
+  padding-left: 0;
+}
+
+.estudios li {
+  margin: 0.95rem 0;
+  padding-left: 0;
+}
+
+.titulo {
+  display: block;
+}
+
+.detalle {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--suave);
+  font-size: 0.95rem;
+}
+
+main a {
+  color: var(--enlace);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+main a:hover,
+main a:focus-visible {
+  color: var(--tinta);
+}
+
+.tarjetas {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+}
+
+.tarjetas > li {
+  margin: 0;
+  padding: 0;
+}
+
+.tarjeta {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  column-gap: 0.9rem;
+  row-gap: 0.2rem;
+  align-items: center;
+  max-width: 26rem;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--linea);
+}
+
+.tarjeta-estado {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  margin: 0 0 0.35rem;
+  color: var(--ejemplo);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+.tarjeta h3 {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.tarjeta-imagen {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 1px dashed #6a6454;
+  color: var(--suave);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
+.tarjeta-verificacion {
+  grid-column: 2;
+  grid-row: 3;
+  margin: 0;
+  color: var(--suave);
+  font-size: 0.85rem;
+}
+
+footer {
+  margin-top: 2.75rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--linea);
+}
+
+.estado {
+  margin-bottom: 0.75rem;
+  color: var(--suave);
+  font-size: 0.92rem;
+}
+
+.etiqueta {
+  color: var(--aviso);
+}
+
+.etiqueta::after {
+  content: " · ";
+  color: var(--suave);
+}
+
+.linea {
+  color: var(--suave);
+  font-size: 0.92rem;
+}
+
+.cierre {
+  margin-top: 0.75rem;
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1.05em;
+  margin-left: 0.12em;
+  background: var(--aviso);
+  vertical-align: text-bottom;
+  animation: parpadeo 1.15s steps(2, jump-none) infinite;
+}
+
+@keyframes parpadeo {
+  to {
+    visibility: hidden;
+  }
+}
+
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+html.js .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.solo-lectura {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 720px) {
+  .pagina {
+    padding-top: 4.25rem;
+    padding-bottom: 4.5rem;
+  }
+
+  h1 {
+    font-size: 2.05rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .pagina {
+    width: calc(100% - 1.5rem);
+    padding-left: 0.85rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .cursor {
+    animation: none;
+    visibility: visible;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+    color: #1a1a1a;
+  }
+
+  .pagina {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .ruta,
+  .cursor,
+  nav,
+  .saltar {
+    display: none;
+  }
+
+  h2,
+  .etiqueta,
+  a,
+  li::marker {
+    color: #1a1a1a;
+  }
+
+  .rol,
+  .detalle,
+  .estado,
+  .linea,
+  .tarjeta-estado,
+  .tarjeta-verificacion,
+  .tarjeta-imagen {
+    color: #333;
+  }
+
+  .tarjeta,
+  .tarjeta-imagen {
+    border-color: #bbb;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
