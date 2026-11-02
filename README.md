@@ -6,7 +6,11 @@ Sitio estático de Matías Cipriano. HTML, CSS y JavaScript, sin framework y sin
 
 El texto está en `index.html`.
 
-La antigüedad en PagoTIC se calcula sola en `script.js`, desde la fecha del atributo `data-desde` en `#antiguedad` (`2022-07-04`). El texto que está dentro de ese elemento es el respaldo por si JavaScript no corre: si cambiás la fecha de inicio, actualizá también ese texto.
+La antigüedad en PagoTIC sale de `script.js`, usando el atributo `data-desde` de `#antiguedad` (`2022-07-04`). Esa fecha no se muestra: en la página solo se ve el tiempo transcurrido, en años, meses, días, horas y minutos. Las unidades en cero se omiten, salvo los minutos. El texto de adentro del elemento es el respaldo si JavaScript no corre; si cambiás `data-desde`, actualizá también ese texto.
+
+Con la página abierta, el valor se refresca solo cada unos segundos mientras la pestaña está visible. Si el sistema pide menos movimiento, queda el valor de ese momento y no sigue actualizándose.
+
+Para probar el cálculo: `node tests/antiguedad.js`.
 
 La tarjeta de AWS GEN AI está en la sección de certificaciones de `index.html`. Falta la imagen del badge y el enlace de verificación: no inventes fecha, ID ni URL.
 
